@@ -1,12 +1,10 @@
 #include "Menu.h"
 
-
 string Menu::choose_tier(const string &component_type) {
     while (true) {
         string tier_choice;
         cout << "Choose tier for " << component_type << " (1. Base, 2. Fast, 3. Express):";
         cin >> tier_choice;
-
         if (tier_choice == "1") {
             return "Base";
         } else if (tier_choice == "2") {
@@ -31,10 +29,8 @@ TransportSystemFactory *Menu::get_factory_by_tier(const string &tier) {
 
 void Menu::build_component(const string &component_type) {
     cout << "\nBuilding " << component_type << "..." << endl;
-
     string tier = choose_tier(component_type);
-    TransportSystemFactory* factory = get_factory_by_tier(tier);
-
+    TransportSystemFactory *factory = get_factory_by_tier(tier);
     if (component_type == "Conveyor Belt") {
         builder->build_conveyor_belt(factory, tier);
     } else if (component_type == "Underground Conveyor Belt") {
@@ -58,7 +54,6 @@ void Menu::show_menu() {
         string choice;
         cout << "Enter your choice (1/2/3/4/5):";
         cin >> choice;
-
         if (choice == "1") {
             build_component("Conveyor Belt");
         } else if (choice == "2") {

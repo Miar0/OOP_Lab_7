@@ -17,7 +17,6 @@ public:
     virtual ConveyorSplitter *create_conveyor_splitter() = 0;
 };
 
-
 class BaseTransportSystemFactory : public TransportSystemFactory {
 public:
     ConveyorBelt *create_conveyor_belt() override;
@@ -44,5 +43,4 @@ public:
 
     ConveyorSplitter *create_conveyor_splitter() override;
 };
-
 #endif
